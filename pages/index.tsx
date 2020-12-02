@@ -5,26 +5,30 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { GetStaticProps } from "next";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 export default function Home({
   allPostsData,
-  posts,
-}: {
+}: // posts,
+{
   allPostsData: {
     date: string;
     title: string;
     id: string;
   }[];
-  posts: {
-    title: string;
-  }[];
+  // posts: {
+  //   title: string;
+  // }[];
 }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}></section>
+      <section className={utilStyles.headingMd}>
+        <Header />
+      </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog from file system</h2>
         <ul className={utilStyles.list}>
@@ -42,14 +46,18 @@ export default function Home({
         </ul>
       </section>
       <section>
-        <h2 className={utilStyles.headingLg}>Blog from external API</h2>
+        <h2 className={utilStyles.headingLg}>
+          Data fetching from external API
+        </h2>
+        <Link href="./externaldata">Click here .....</Link>
         {/* external api*/}
-        <ul>
+        {/* <ul>
           {posts.map((post) => (
             <li>Title: {post.title}</li>
           ))}
-        </ul>
+        </ul> */}
       </section>
+      <Footer />
     </Layout>
   );
 }
@@ -57,12 +65,12 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   // external api
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
+  // const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  // const posts = await res.json();
   return {
     props: {
       allPostsData,
-      posts,
+      // posts,
     },
   };
 };
