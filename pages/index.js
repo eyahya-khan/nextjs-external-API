@@ -30,6 +30,7 @@ export default function Home({ allPostsData, posts }) {
       </section>
       <section>
         <h2 className={utilStyles.headingLg}>Blog from external API</h2>
+        <h2 className={utilStyles.headingLg}>External API</h2>
         {/* external api*/}
         <ul>
           {posts.map((post) => (
