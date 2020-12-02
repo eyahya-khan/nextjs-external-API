@@ -1,15 +1,28 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import Date from "../components/date";
 import Link from "next/link";
+import Date from "../components/date";
+import { GetStaticProps } from "next";
 
-export default function Home({ allPostsData, posts }) {
+export default function Home({
+  allPostsData,
+  posts,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+  posts: {
+    title: string;
+  }[];
+}) {
   return (
     <Layout home>
       <Head>
-        <title>Home page</title>
+        <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}></section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -30,7 +43,6 @@ export default function Home({ allPostsData, posts }) {
       </section>
       <section>
         <h2 className={utilStyles.headingLg}>Blog from external API</h2>
-        <h2 className={utilStyles.headingLg}>External API</h2>
         {/* external api*/}
         <ul>
           {posts.map((post) => (
@@ -42,16 +54,15 @@ export default function Home({ allPostsData, posts }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   // external api
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
-
   return {
     props: {
       allPostsData,
       posts,
     },
   };
-}
+};
