@@ -10,16 +10,12 @@ import Header from "../components/header";
 
 export default function Home({
   allPostsData,
-}: // posts,
-{
+}: {
   allPostsData: {
     date: string;
     title: string;
     id: string;
   }[];
-  // posts: {
-  //   title: string;
-  // }[];
 }) {
   return (
     <Layout home>
