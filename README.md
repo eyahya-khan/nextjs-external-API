@@ -1,7 +1,7 @@
-Install Next.js
+//Install Next.js
 npx create-next-app
 
-Add Typescript
+//Add Typescript
 touch tsconfig.json
 // with npm
 npm install --dev typescript @types/react @types/node
