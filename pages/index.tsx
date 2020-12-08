@@ -7,6 +7,7 @@ import Date from "../components/date";
 import { GetStaticProps } from "next";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Title from "../components/Title";
 
 export default function Home({
   allPostsData,
@@ -19,8 +20,10 @@ export default function Home({
 }) {
   return (
     <Layout home>
+      <Title>Welcome</Title>
       <Head>
         <title>{siteTitle}</title>
+        {/* <title>Welcome</title> */}
       </Head>
       <section className={utilStyles.headingMd}>
         <Header />

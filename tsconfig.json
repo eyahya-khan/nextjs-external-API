@@ -12,39 +12,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "types": ["jest", "node"]
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
-
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "lib": ["dom", "dom.iterable", "esnext"],
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "strict": false,
-//     "forceConsistentCasingInFileNames": true,
-//     "noEmit": true,
-//     "esModuleInterop": true,
-//     "module": "esnext",
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": false,
-//     "jsx": "preserve"
-//   },
-//   "include": [
-//     "next-env.d.ts",
-//     "**/*.ts",
-//     "**/*.tsx",
-//     "components/date.tsx",
-//     "components/layout.tsx",
-//     "lib/posts.ts",
-//     "pages/api/hello.ts",
-//     "pages/posts/[id].tsx",
-//     "pages/_app.tsx",
-//     "pages/index.tsx"
-//   ],
-//   "exclude": ["node_modules"]
-// }
