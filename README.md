@@ -1,3 +1,11 @@
+##On live
+
+nextjs-external-api.eyahya-khan.vercel.app
+
+
+
+
+
 //Install Next.js
 npx create-next-app
 
