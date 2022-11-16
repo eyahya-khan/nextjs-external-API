@@ -1,6 +1,6 @@
 ##On live
 
-nextjs-external-api.eyahya-khan.vercel.app
+https://nextjs-external-api.eyahya-khan.vercel.app/
 
 
 
